@@ -7,6 +7,10 @@ class LemondeSpider(scrapy.Spider):
     name = "lemondev4"
     allowed_domains = ["www.lemonde.fr"]
     start_urls = ['https://www.lemonde.fr']
+    # custom_settings = {
+    #         "HTTPCACHE_ENABLED":True, 
+    #         "CONCURRENT_REQUESTS_PER_DOMAIN":100
+    #     }
 
     def parse(self, response):
         title = response.css('title::text').extract_first()
